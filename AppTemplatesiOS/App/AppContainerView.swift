@@ -54,6 +54,7 @@ struct UIPilotContentView: View {
     var body: some View {
         UIPilotHost(pilot) { route in
             DestinationView(route: route)
-        }
+                
+        }.edgesIgnoringSafeArea(.all)
     }
 }
