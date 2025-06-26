@@ -9,13 +9,23 @@ import SwiftUI
 
 struct HomeView: View {
     @EnvironmentObject private var router : Router
+    @State var showSplashView : Bool = true
+    
     var body: some View {
-        VStack {
-            Text("Home View")
-            Button("Click Me"){
-                router.push(.profile)
+        ZStack {
+            if showSplashView {
+                SplashView(isVisible: $showSplashView)
+            }else{
+                VStack {
+                    Text("Home View")
+                    Button("Click Me"){
+                        router.push(.profile)
+                    }
+                }
             }
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(.pink.opacity(0.8))
     }
 }
 
