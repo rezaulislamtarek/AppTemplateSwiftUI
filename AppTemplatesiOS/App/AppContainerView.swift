@@ -9,6 +9,22 @@ import SwiftUI
 import UIPilot
 
 
+struct AppContainerView: View {
+    
+    var body: some View {
+        if #available(iOS 16.0, *) {
+            NavigationStackContentView()
+        } else {
+            UIPilotContentView()
+        }
+    }
+    
+}
+
+#Preview {
+    AppContainerView()
+        .environmentObject(Router())
+}
 
 @available(iOS 16.0, *)
 struct NavigationStackContentView: View {
@@ -40,40 +56,4 @@ struct UIPilotContentView: View {
             DestinationView(route: route)
         }
     }
-}
-
-
-struct DestinationView: View {
-    let route: AppRoute
-    
-    var body: some View {
-        switch route {
-        case .home:
-            HomeView()
-        case .profile:
-            ProfileView()
-        case .settings:
-            SettingView()
-        case .settingDetails(let id):
-            SettingDetailsView(id: id)
-        }
-    }
-}
-
-
-struct AppContainerView: View {
-    
-    var body: some View {
-        if #available(iOS 16.0, *) {
-            NavigationStackContentView()
-        } else {
-            UIPilotContentView()
-        }
-    }
-    
-}
-
-#Preview {
-    AppContainerView()
-        .environmentObject(Router())
 }
