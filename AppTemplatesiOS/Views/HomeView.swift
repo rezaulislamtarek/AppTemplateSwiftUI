@@ -16,16 +16,22 @@ struct HomeView: View {
             if showSplashView {
                 SplashView(isVisible: $showSplashView)
             }else{
-                VStack {
+                VStack (spacing: 12 ){
+                    Image(systemName: "house")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 50)
                     Text("Home View")
                     Button("Click Me"){
                         router.push(.profile)
                     }
+                    .buttonBorderShape(.capsule)
                 }
+                .fontRegular(18)
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(.pink.opacity(0.8))
+        .background(.white)
     }
 }
 

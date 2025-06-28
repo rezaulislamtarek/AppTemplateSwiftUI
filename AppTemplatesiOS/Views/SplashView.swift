@@ -17,6 +17,7 @@ struct SplashView: View {
                 .frame(width: 80, height: 80)
                 
             Text("AppTemplatesiOS")
+                .fontBold(26)
         }
         .foregroundColor(.white)
         .frame(maxWidth: .infinity, maxHeight: .infinity)

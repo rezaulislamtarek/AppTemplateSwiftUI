@@ -19,6 +19,27 @@ struct SettingView: View {
                 router.popToRoot()
             }
         }
+        .fontRegular(20)
+        .hideNavigationBar(false)
+        .navigationBarBackButtonHidden(true)
+        .toolbar{
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button {
+                    router.pop()
+                } label: {
+                    HStack{
+                        Image(systemName: "arrow.left")
+                        Text("Back")
+                    }
+                    .fontMedium(16)
+                }
+
+            }
+            ToolbarItem(placement: .navigation) {
+                Text("Setting View")
+                    .fontRegular(16)
+            }
+        }
     }
 }
 

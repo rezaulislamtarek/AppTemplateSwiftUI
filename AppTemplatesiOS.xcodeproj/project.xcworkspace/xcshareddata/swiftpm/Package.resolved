@@ -1,6 +1,24 @@
 {
-  "originHash" : "f63f625882d4d8b44116008bdc288375c6df637b0ef23708070fdce308d00b9e",
+  "originHash" : "d5e329b3533c7c6ab2db31e3db14fdca71d7a10ded94a105bd2724214144cfaf",
   "pins" : [
+    {
+      "identity" : "easynet",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/rezaulislamtarek/EasyNet.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "0818ece60e0cb3d7c23c078646aa55ad5f4603bf"
+      }
+    },
+    {
+      "identity" : "factory",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/hmlongco/Factory.git",
+      "state" : {
+        "revision" : "ccc898f21992ebc130bc04cc197460a5ae230bcf",
+        "version" : "2.5.3"
+      }
+    },
     {
       "identity" : "uipilot",
       "kind" : "remoteSourceControl",

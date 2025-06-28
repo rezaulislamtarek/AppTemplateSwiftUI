@@ -112,6 +112,4 @@ class Router: ObservableObject {
     func popToRoot() {
         navigationService?.backToRoot()
     }
-    
-     
 }
