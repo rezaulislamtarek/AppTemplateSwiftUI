@@ -20,6 +20,8 @@ struct DestinationView: View {
             SettingView()
         case .settingDetails(let id):
             SettingDetailsView(id: id)
+        case .questions:
+            QuestionsListView()
         }
     }
 }

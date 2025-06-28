@@ -21,9 +21,9 @@ struct SplashView: View {
         }
         .foregroundColor(.white)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(.yellow)
+        .background(.green)
         .onAppear {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 withAnimation {
                     self.isVisible = false
                 }

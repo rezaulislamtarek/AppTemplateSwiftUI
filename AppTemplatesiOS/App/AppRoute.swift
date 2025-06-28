@@ -12,4 +12,5 @@ enum AppRoute: Hashable {
     case profile
     case settings
     case settingDetails(Int)
+    case questions
 }
