@@ -20,7 +20,7 @@
 		0BC942A62E0FF5ED005CCD36 /* Exceptions for "AppTemplatesiOS" folder in "AppTemplatesiOS" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Info.plist,
+				Resources/Info.plist,
 			);
 			target = 0BDEB5122E0D26F300A77E51 /* AppTemplatesiOS */;
 		};
@@ -284,7 +284,7 @@
 				DEVELOPMENT_TEAM = 8PCBC9GBAN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = AppTemplatesiOS/Info.plist;
+				INFOPLIST_FILE = AppTemplatesiOS/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -314,7 +314,7 @@
 				DEVELOPMENT_TEAM = 8PCBC9GBAN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = AppTemplatesiOS/Info.plist;
+				INFOPLIST_FILE = AppTemplatesiOS/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
