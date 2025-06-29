@@ -14,6 +14,10 @@ struct AppTemplatesiOSApp: App {
     @StateObject private var router = Router()
     @StateObject private var pilot = UIPilot(initial: AppRoute.home)
     
+    init(){
+        DBConfig.shared.realmconfig()
+    }
+    
     var body: some Scene {
         WindowGroup {
             AppContainerView()

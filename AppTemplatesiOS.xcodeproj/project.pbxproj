@@ -7,10 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B1222FA2E1110DE00DBCCB3 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 0B1222F92E1110DE00DBCCB3 /* Lottie */; };
+		0B1223B12E1112DF00DBCCB3 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0B1223B02E1112DF00DBCCB3 /* RealmSwift */; };
+		0B1223B22E11142800DBCCB3 /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 0B1223B02E1112DF00DBCCB3 /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		0BC942732E0FBED7005CCD36 /* EasyNet in Frameworks */ = {isa = PBXBuildFile; productRef = 0BC942722E0FBED7005CCD36 /* EasyNet */; };
 		0BC942762E0FC063005CCD36 /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = 0BC942752E0FC063005CCD36 /* Factory */; settings = {ATTRIBUTES = (Required, ); }; };
 		0BDEB5262E0D2D7000A77E51 /* UIPilot in Frameworks */ = {isa = PBXBuildFile; productRef = 0BDEB5252E0D2D7000A77E51 /* UIPilot */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0B1223B32E11142800DBCCB3 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0B1223B22E11142800DBCCB3 /* RealmSwift in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0BDEB5132E0D26F300A77E51 /* AppTemplatesiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppTemplatesiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,6 +62,8 @@
 				0BC942762E0FC063005CCD36 /* Factory in Frameworks */,
 				0BC942732E0FBED7005CCD36 /* EasyNet in Frameworks */,
 				0BDEB5262E0D2D7000A77E51 /* UIPilot in Frameworks */,
+				0B1223B12E1112DF00DBCCB3 /* RealmSwift in Frameworks */,
+				0B1222FA2E1110DE00DBCCB3 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +96,7 @@
 				0BDEB50F2E0D26F300A77E51 /* Sources */,
 				0BDEB5102E0D26F300A77E51 /* Frameworks */,
 				0BDEB5112E0D26F300A77E51 /* Resources */,
+				0B1223B32E11142800DBCCB3 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -90,6 +110,8 @@
 				0BDEB5252E0D2D7000A77E51 /* UIPilot */,
 				0BC942722E0FBED7005CCD36 /* EasyNet */,
 				0BC942752E0FC063005CCD36 /* Factory */,
+				0B1222F92E1110DE00DBCCB3 /* Lottie */,
+				0B1223B02E1112DF00DBCCB3 /* RealmSwift */,
 			);
 			productName = Hawamsh;
 			productReference = 0BDEB5132E0D26F300A77E51 /* AppTemplatesiOS.app */;
@@ -123,6 +145,8 @@
 				0BDEB5242E0D2D7000A77E51 /* XCRemoteSwiftPackageReference "UIPilot" */,
 				0BC942712E0FBED7005CCD36 /* XCRemoteSwiftPackageReference "EasyNet" */,
 				0BC942742E0FC063005CCD36 /* XCRemoteSwiftPackageReference "Factory" */,
+				0B1222F82E1110DE00DBCCB3 /* XCRemoteSwiftPackageReference "lottie-spm" */,
+				0B1223AF2E1112DF00DBCCB3 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 0BDEB5142E0D26F300A77E51 /* Products */;
@@ -358,6 +382,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		0B1222F82E1110DE00DBCCB3 /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-spm.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.5.2;
+			};
+		};
+		0B1223AF2E1112DF00DBCCB3 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		0BC942712E0FBED7005CCD36 /* XCRemoteSwiftPackageReference "EasyNet" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/rezaulislamtarek/EasyNet.git";
@@ -385,6 +425,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		0B1222F92E1110DE00DBCCB3 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0B1222F82E1110DE00DBCCB3 /* XCRemoteSwiftPackageReference "lottie-spm" */;
+			productName = Lottie;
+		};
+		0B1223B02E1112DF00DBCCB3 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0B1223AF2E1112DF00DBCCB3 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
 		0BC942722E0FBED7005CCD36 /* EasyNet */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 0BC942712E0FBED7005CCD36 /* XCRemoteSwiftPackageReference "EasyNet" */;
