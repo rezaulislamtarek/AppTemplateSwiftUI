@@ -19,7 +19,7 @@ struct AppTextField: View {
     var body: some View {
         VStack {
             RoundedRectangle(cornerRadius: 8, style: .continuous)
-                .fill(.grayf8F8F8)
+                .fill(.gray.opacity(0.1))
                 .frame(height: height)
                 .shadow(
                     color: Color(hex: "#DEE3EA").opacity(isFocus ? 1 : 0),
@@ -29,7 +29,7 @@ struct AppTextField: View {
                 )
                 .overlay {
                     RoundedRectangle(cornerRadius: 8, style: .continuous)
-                        .stroke(isFocus ? .blue100 : .grayf8F8F8, lineWidth: 0.3)
+                        .stroke(isFocus ? .blue : .gray.opacity(0.1), lineWidth: 0.3)
                         .opacity(isFocus || !text.isEmpty ? 1 : 0)
                 }
                 .overlay {
@@ -41,7 +41,7 @@ struct AppTextField: View {
                     HStack(spacing : 2){
                         Text(label)
                             //.padding(.leading, 4 )
-                            .foregroundStyle(errorMessage != nil ? .red : isFocus ? .blue100 : Color(hex: "#475569"))
+                            .foregroundStyle(errorMessage != nil ? .red : isFocus ? .blue : Color(hex: "#475569"))
                             .fontRegular(14)
                         
                         Text("*")
