@@ -1,13 +1,15 @@
+
 //
 //  HSecureField.swift
-//  AppTemplatesiOS
+//  Hawamsh
 //
-//  Created by Rezaul Islam on 11/7/25.
+//  Created by Rezaul Islam on 7/1/25.
 //
 
 import SwiftUI
 
-struct AppSecureField: View {
+
+struct HSecureField: View {
     let label : String
     var width : CGFloat = .infinity
     var height : CGFloat = 48
@@ -20,7 +22,7 @@ struct AppSecureField: View {
     var body: some View {
         VStack {
             RoundedRectangle(cornerRadius: 8, style: .continuous)
-                .fill(.grayf8F8F8)
+                .fill(.gray.opacity(0.1))
                 .frame(height: height)
                 .shadow(
                     color: Color(hex: "#DEE3EA").opacity(isFocus ? 1 : 0),
@@ -30,8 +32,8 @@ struct AppSecureField: View {
                 )
                 .overlay {
                     RoundedRectangle(cornerRadius: 8, style: .continuous)
-//                        .stroke(isFocus ? .blue100 : .gray, lineWidth: 1)
-                        .stroke(isFocus ? .blue100 : .grayf8F8F8, lineWidth: 0.3)
+                    //                        .stroke(isFocus ? .blue100 : .gray, lineWidth: 1)
+                        .stroke(isFocus ? .blue : .gray.opacity(0.1), lineWidth: 0.3)
                         .opacity(isFocus || !text.isEmpty ? 1 : 0)
                 }
                 .overlay {
@@ -42,26 +44,24 @@ struct AppSecureField: View {
                 .overlay(alignment: .leading) {
                     HStack(spacing : 2){
                         Text(label)
-                            //.padding(.leading, 4 )
-                            .foregroundStyle(errorMessage != nil ? .red : isFocus ? .blue100 : .black100)
+                        //.padding(.leading, 4 )
+                            .foregroundStyle(errorMessage != nil ? .red : isFocus ? .blue : .black)
                             .fontRegular(14)
                         
                         Text("*")
                             .foregroundStyle(.red)
                             .opacity(isMendotory ? 1 : 0)
                     }.padding(.leading, 4)
+                        .background(
+                            Color.white
+                                .frame(height: 2, alignment: .center)
+                                .offset(y: 1)
+                                .opacity(isFocus || !text.isEmpty ? 1 : 0)
+                        )
                     
-                    //                .background( isFocus || !text.isEmpty ? Color.white : .grayf8F8F8  )
-                    .background(
-                        Color.white
-                            .frame(height: 2, alignment: .center)
-                            .offset(y: 1)
-                            .opacity(isFocus || !text.isEmpty ? 1 : 0)
-                    )
-                    
-                    .padding(8)
-                    .offset(y: isFocus || !text.isEmpty ? -25 : 0)
-                    .animation(.easeInOut(duration: 0.1), value: isFocus)
+                        .padding(8)
+                        .offset(y: isFocus || !text.isEmpty ? -25 : 0)
+                        .animation(.easeInOut(duration: 0.1), value: isFocus)
                 }
                 .overlay {
                     ZStack {
@@ -74,7 +74,7 @@ struct AppSecureField: View {
                             .focused($isFocus)
                             .padding(.horizontal, 10)
                             .opacity(showPassword ? 0 : 1)
-                             
+                        
                     }
                     .padding(.trailing, 38)
                     .overlay(alignment: .trailing) {
@@ -85,11 +85,11 @@ struct AppSecureField: View {
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 22, height: 22, alignment: .center)
-                                .foregroundStyle(.black100)
-                                
+                                .foregroundStyle(.black)
+                            
                         }
                         .padding(.trailing, 13)
-
+                        
                     }
                 }
             if let errorMessage{
@@ -106,7 +106,7 @@ struct AppSecureField: View {
         }
         
     }
-         
+    
     
 }
 
@@ -115,8 +115,8 @@ struct HSecureFieldImp : View {
     @State var text2 : String = ""
     @State var errorMessage : String? = "Error occured"
     var body: some View {
-        AppSecureField(label: "Password", text: $text, errorMessage: .constant(nil))
-        AppSecureField(label: "Password", text: $text2, errorMessage: $errorMessage)
+        HSecureField(label: "Password", text: $text, errorMessage: .constant(nil))
+        HSecureField(label: "Password", text: $text2, errorMessage: $errorMessage)
         
     }
 }
