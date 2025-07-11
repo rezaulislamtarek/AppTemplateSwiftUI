@@ -10,12 +10,37 @@ import UIPilot
 
 
 struct AppContainerView: View {
-    
+    @EnvironmentObject var router: Router
     var body: some View {
         if #available(iOS 16.0, *) {
             NavigationStackContentView()
+                .overlay {
+                    setUpOverlay()
+                }
         } else {
             UIPilotContentView()
+                .overlay {
+                    setUpOverlay()
+                }
+        }
+    }
+    
+    func setUpOverlay() -> some View{
+        ZStack{
+            if router.isPopupVisible {
+                Color.black.opacity(0.5)
+                    .ignoresSafeArea()
+                    .animation(.easeInOut(duration: 0.3), value: router.isPopupVisible)
+                    .onTapGesture {
+                        router.hidePopup()
+                    }
+            }
+            
+            if router.isPopupVisible,
+               let popupRoute = router.currentPopupRoute {
+                DestinationView(route: popupRoute)
+                    //.transition(.scale.combined(with: .opacity))
+            }
         }
     }
     

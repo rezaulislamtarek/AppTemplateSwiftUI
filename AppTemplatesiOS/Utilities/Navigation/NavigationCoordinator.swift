@@ -80,6 +80,7 @@ extension NavigationCoordinator: NavigationService {
 
 @MainActor
 protocol NavigationService: ObservableObject {
+    
     func navigate(_ route: AppRoute)
     func back()
     func backTo(_ route : AppRoute)
@@ -88,6 +89,10 @@ protocol NavigationService: ObservableObject {
 
 @MainActor
 class Router: ObservableObject {
+    @Published var isPopupVisible: Bool = false
+    
+    @Published var currentPopupRoute: AppRoute? = nil
+    
     var navigationService: (any NavigationService)?
     
     func setNavigationService(_ service: any NavigationService) {
@@ -112,4 +117,22 @@ class Router: ObservableObject {
     func popToRoot() {
         navigationService?.backToRoot()
     }
+    
+    
+    // ADD THESE NEW POPUP METHODS
+        func showPopup(_ route: AppRoute) {
+            currentPopupRoute = route
+            withAnimation(.easeInOut(duration: 0.3)) {
+                isPopupVisible = true
+            }
+        }
+        
+        func hidePopup() {
+            withAnimation(.easeInOut(duration: 0.3)) {
+                isPopupVisible = false
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                self.currentPopupRoute = nil
+            }
+        }
 }
