@@ -28,6 +28,16 @@ struct QuestionsListView: View {
                     }
                 }
             }
+            
+            Button("Go To Details popup"){
+                router.showPopup(.detailsPopup(vm: viewModel, onCompleted: {
+                     
+                    router.showPopup(.successPopup(onCompleted: {
+                        router.hidePopup()
+                        router.pop()
+                    }))
+                }))
+            }
         
         }
         .overlay(content: {
