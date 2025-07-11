@@ -27,13 +27,15 @@ struct AppDropdownPicker: View {
                 }) {
                     Text(option.title)
                         .fontRegular(14)
+                        .foregroundStyle(.black)
+                        .frame(maxWidth: .infinity, alignment: .leading)
                 }
             }
         } label: {
             HStack {
                 Text(selectedItem.title)
                     .fontRegular(14)
-                    .foregroundColor(.primary)
+                    .foregroundColor(.black)
                 Spacer()
                 Image(systemName: "chevron.down")
                     .foregroundColor(.secondary)
